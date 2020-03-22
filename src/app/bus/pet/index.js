@@ -2,9 +2,9 @@
 import React from 'react';
 
 // Components
-import { Counter } from './counter';
-import { List } from './list';
-import { SpecialList } from './specialList';
+import { Counter } from './hooks/view/counter';
+import { List } from './hooks/view/list';
+import { SpecialList } from './hooks/view/specialList';
 
 export const Pet = () => {
   return (

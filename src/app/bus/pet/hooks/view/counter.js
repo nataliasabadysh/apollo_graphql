@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Hooks
-import { useQueryAvailablePets } from './hooks/useQueryAvailablePets';
+import { useQueryAvailablePets } from '../useQueryAvailablePets';
 
 export const Counter = () => {
   const { loading, error, data } = useQueryAvailablePets();
