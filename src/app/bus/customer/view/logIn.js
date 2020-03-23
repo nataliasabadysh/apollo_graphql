@@ -1,36 +1,24 @@
-
 import React from 'react';
-// Components
-import { useCustomerLogin } from '../hooks/useCustomerLogin';
+
+// Hooks
+import { useCustomerAuth } from '../hooks/useCustomerAuth';
 
 export const Login = () => {
-  const { handleChange, save, loginAccount, error, loading } = useCustomerLogin();
+  const { handleChange, logIn, authorizedCustomer } = useCustomerAuth();
 
-  const customerJSX = loginAccount && (
-    <p>
-      Welcome { loginAccount.customer && loginAccount.customer.username } !
-    </p>
+  const authorizedCustomerJSX = authorizedCustomer && (
+    <>
+      <p>Authorized Customer: { authorizedCustomer.customer.name }</p>
+    </>
   );
-  // set to LS loginAccount.token
-  
-  if (loading) {
-    return <p>Loading...</p>
-  }
-
-  if (error) {
-    return (
-      <p>
-        We have a problem: {error.message}
-      </p>
-    )
-  }
 
   return (
     <>
+      <h1>Login</h1>
       <input type="text" placeholder="username" name="username" onChange={handleChange} />
       <input type="password" placeholder="password" name="password" onChange={handleChange} />
-      <button type="submit" onClick={save}>Save</button>
-      { customerJSX }
+      <button type="submit" onClick={logIn}>Login</button>
+      {authorizedCustomerJSX}
     </>
   )
 };

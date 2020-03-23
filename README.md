@@ -1,8 +1,17 @@
 
+# use in project library  
 
 * yarn create react-app .
 * yarn add apollo-boost @apollo/react-hooks graphql
 * loader * yarn add graphql.macro
+* yarn add -D apollo
+
+* schema yarn run apollo:download-schema
+
+* for the caching + yarn add apollo-client
+
+* yarn add apollo-link-http
+* yarn add apollo-cache-inmemory
 
 
 # materials

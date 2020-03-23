@@ -12,7 +12,7 @@ export const useCustomerLogin = () => {
     username:'',
     password:'',
   });
-  
+
   const handleChange = (event) => {
     event.persist();
     setValues((prevValues) => ({
@@ -24,14 +24,13 @@ export const useCustomerLogin = () => {
 
   const save = () => {
   const { username, password }  = value;
-    loginUser({ // method use mutation 
+    loginUser({ 
       variables: {
         username,
         password
       }
     })
-  };
-
+  }; 
 
   return {
     handleChange,
