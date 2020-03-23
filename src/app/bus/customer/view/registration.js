@@ -1,17 +1,16 @@
 
 import React from 'react';
 // Components
-import { useCustomerLogin } from '../hooks/useCustomerLogin';
+import { useCustomer } from '../hooks/useCustomer';
 
-export const Login = () => {
-  const { handleChange, save, loginAccount, error, loading } = useCustomerLogin();
+export const Registration = () => {
+  const { handleChange, save, createdAccount, error, loading } = useCustomer();
 
-  const customerJSX = loginAccount && (
+  const customerJSX = createdAccount && (
     <p>
-      Welcome { loginAccount.customer && loginAccount.customer.username } !
+      We already created customer with name: { createdAccount.name } 
     </p>
   );
-  // set to LS loginAccount.token
   
   if (loading) {
     return <p>Loading...</p>
@@ -27,6 +26,7 @@ export const Login = () => {
 
   return (
     <>
+      <input type="text" placeholder="name" name="name" onChange={handleChange} />
       <input type="text" placeholder="username" name="username" onChange={handleChange} />
       <input type="password" placeholder="password" name="password" onChange={handleChange} />
       <button type="submit" onClick={save}>Save</button>
