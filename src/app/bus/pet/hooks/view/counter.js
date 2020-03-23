@@ -5,10 +5,13 @@ import React from 'react';
 import { useQueryAvailablePets } from '../useQueryAvailablePets';
 
 export const Counter = () => {
-  const { loading, error, data } = useQueryAvailablePets();
+  const { loading, error, data, refetch, networkStatus } = useQueryAvailablePets();
   
   if (loading) {
     return <p>Loading...</p>
+  }
+  if (networkStatus ===4 ) {
+    return <p>Refething ...</p>
   }
 
   if (error) {

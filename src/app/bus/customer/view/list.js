@@ -22,7 +22,7 @@ export const List = () => {
   const petsJSX = data && data.allCustomers.map(({username, name, dateCreated}) => (
     <p key={name}>
       <span>Name: {name}</span>
-      <span>: {username}</span>
+      <span>Username: {username}</span>
       <span>Date:  <Moment parse="YYYY-MM-DD"> {dateCreated} </Moment></span>
     </p>
   ));
