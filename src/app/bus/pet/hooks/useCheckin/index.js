@@ -7,6 +7,7 @@ import { loader } from 'graphql.macro';
 const mutationCheckIn = loader('./gql/mutationCheckIn.graphql');
 
 export const useCheckin = () => {
+  
   const [_checkIn, { data, errors }] = useMutation(mutationCheckIn);
   const [error, setError] = useState(false);
 

@@ -8,10 +8,10 @@
 
 * schema yarn run apollo:download-schema
 
-* for the caching + yarn add apollo-client
-
+* yarn add apollo-client
 * yarn add apollo-link-http
 * yarn add apollo-cache-inmemory
+* yarn add apollo-link-context
 
 
 # materials
