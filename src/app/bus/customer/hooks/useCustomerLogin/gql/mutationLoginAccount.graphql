@@ -1,8 +1,0 @@
-mutation loginAccount($username: ID!, $password: String! ){
-  logIn(username: $username, password: $password){
-    customer { 
-        username
-        },
-    token
-  }
-}
